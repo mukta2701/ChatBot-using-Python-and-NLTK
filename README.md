@@ -1,15 +1,57 @@
-# Create-a-chatbot-using-Python-and-NLTK
+# CHATBOT using Python
 
-The code provided is a Python script that implements a simple chatbot using a neural network. The chatbot is designed to understand user input and respond appropriately based on predefined intents.
+This is a Python chatbot built using Keras and NLTK libraries. The chatbot is trained on a JSON file containing various intents and responses. The model is built using a neural network architecture and is able to predict the class and probability of the user's input.
 
-The script first loads a pre-trained neural network from a saved model file. Then, it defines several functions to preprocess user input, predict the intent of the input, and retrieve a response from a JSON file containing predefined intents and responses. Finally, it creates an interactive loop that prompts the user for input and responds with an appropriate message until the user exits the loop.
+It can understand and respond to a variety of user messages based on pre-defined intents.
 
-In more detail, the script:
+## REQUIREMENTS
 
-Imports necessary libraries such as Keras, NumPy, NLTK, and pickle.
-Defines a WordNetLemmatizer object for stemming words.
-Loads a JSON file containing predefined intents and responses.
-Loads saved files containing a list of unique words and a list of unique intents/classes.
-Loads a pre-trained neural network model from a saved file.
-Defines several functions for preprocessing user input, predicting the intent of the input, and retrieving a response from the JSON file.
-Creates an interactive loop that prompts the user for input and responds with an appropriate message until the user exits the loop.
+- JSON
+
+- pickle
+
+    pickle is a library that can be used to save data to a file.
+
+- Python 3.x
+
+- Keras
+
+    Keras is a library that can be used to create neural networks.
+    
+- Numpy
+
+- NLTK (Natural Language Tool Kit)
+
+## SETUP
+
+- Clone this repository to your local machine.
+
+- Install the required packages listed above using pip.
+
+    pip install -r requirements.txt
+
+- Run the 'chatbot.py' script to start the chatbot.
+
+## USAGE
+
+The chatbot is designed to respond to specific intents related to various topics such as time, date, and weather. The intents and their responses are stored in the intents.json file. The model is trained on this file to predict the class and probability of the user's input.
+
+
+To use the chatbot, simply enter your message and press enter. The chatbot will predict the class and probability of your input, and then respond with an appropriate response from the intents.json file.
+
+## FILE STRUCTURE
+
+- ' chatbot.py ' : Main Python script that runs the chatbot.
+
+- ' intents.json ': JSON file that contains the pre-defined intents and responses for the chatbot.
+
+- ' words.pkl ' : Pickle file that contains a list of all unique words in the intents.
+
+- ' classes.pkl ' : Pickle file that contains a list of all unique classes (intents) in the intents.
+
+- ' chatbot_model.h5 ' : Keras model that was trained on the intents to classify user messages.
+
+## CREDITS
+
+This Chatbot is built by Mukta Choudhury. Spedial thanks to the creators of Keras and NLTK libraries for making this project possible.
+

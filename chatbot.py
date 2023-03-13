@@ -7,6 +7,7 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 
 from keras.models import load_model
+from datetime import datetime
 
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('intents.json').read())
@@ -66,7 +67,11 @@ def getResponse(ints, intents_json):
     list_of_intents = intents_json['intent']
     for i in list_of_intents:
         if(i['tag']== tag):
-            result = random.choice(i['responses'])
+            # if intent is date and time, then return current date and time
+            if i['tag'] == 'datetime':
+                result = random.choice(i['responses']).replace('{{datetime}}', datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+            else:
+                result = random.choice(i['responses'])
             break
     return result
 

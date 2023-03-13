@@ -3,6 +3,7 @@ import json
 import nltk
 import pickle
 import random
+from datetime import datetime
 
 
 ## nltk.stem is a library for stemming words. 
@@ -132,4 +133,11 @@ hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5,
 
 # Here we are saving the model to a file called chatbot_model.h5
 model.save('chatbot_model.h5', hist)
+
+# Add datetime intent
+for intent in intents['intent']:
+    if intent['tag'] == 'datetime':
+        intent['responses'].append('The current date and time is ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
+
+
 print("Model created!")

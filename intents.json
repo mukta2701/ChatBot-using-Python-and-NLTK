@@ -66,27 +66,19 @@
             ]
         },
         {
-            "tag": "time",
-            "patterns": [
-                "What time is it?",
-                "What's the time?",
-                "Tell me the time"
-            ],
-            "responses": [
-                "It is 12:00pm",
-                "It's 3:00pm"
-            ]
-        },
-        {
-            "tag": "date",
+            "tag": "datetime",
             "patterns": [
                 "What is the date today?",
+                "What is the date?",
                 "What's the date today?",
-                "Tell me the date"
+                "What's the date?",
+                "What is the time?",
+                "What is the time now?",
+                "What's the time?",
+                "What's the time now?"
             ],
             "responses": [
-                "Today is 11-03-2023",
-                "It's 11-03-2023"
+                "The current date and time is {{datetime}}"
             ]
         },
         {
